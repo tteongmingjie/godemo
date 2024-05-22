@@ -1,0 +1,9 @@
+Name: student.rpc
+ListenOn: 0.0.0.0:9001
+# Etcd:
+#   Hosts:
+#   - 192.168.15.10:2379
+#   Key: student.rpc
+
+Mysql:
+  DataSource: root:root@tcp(192.168.15.10:3306)/school_test?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai

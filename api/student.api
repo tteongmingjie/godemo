@@ -1,0 +1,46 @@
+type (
+	// 创建
+	CreateRequest {
+		Name  string `json:"name"`
+		StuNo string `json:"stu_no"`
+	}
+	CreateResponse {
+		Id int64 `json:"id"`
+	}
+	// 修改
+	UpdateRequest {
+		Id    int64  `json:"id"`
+		Name  string `json:"name,optional"`
+		StuNo string `json:"stu_no"`
+	}
+	UpdateResponse  {}
+	// 删除
+	RemoveRequest {
+		Id int64 `json:"id"`
+	}
+	RemoveResponse  {}
+	// 详情
+	DetailRequest {
+		Id int64 `json:"id"`
+	}
+	DetailResponse {
+		Id    int64  `json:"id"`
+		Name  string `json:"name"`
+		StuNo string `json:"stu_no"`
+	}
+)
+
+service Student {
+	@handler Create
+	post /api/student/create (CreateRequest) returns (CreateResponse)
+
+	@handler Update
+	post /api/student/update (UpdateRequest) returns (UpdateResponse)
+
+	@handler Remove
+	post /api/student/remove (RemoveRequest) returns (RemoveResponse)
+
+	@handler Detail
+	post /api/student/detail (DetailRequest) returns (DetailResponse)
+}
+
